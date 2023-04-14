@@ -14,6 +14,7 @@ class App {
                     b.display();
                     break;
                 case 4:
+                    System.out.println("Application Closed");
                     System.exit(4);
 
             }

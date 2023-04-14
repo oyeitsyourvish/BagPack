@@ -19,6 +19,7 @@ class Bag {
                     System.out.println("Enter the Authour Name");
                     String authour = sc.next();
                     b = new Book(bname, price, authour);
+                    System.out.println("Book Add Successfully");
                     break;
 
                 case 2:
@@ -30,18 +31,18 @@ class Bag {
                     System.out.println("Enter the Brand Name");
                     String brand = sc.next();
                     l = new Laptop(lname, lprice, brand);
+                    System.out.println("Laptop Add Successfully");
                     break;
 
             }
-            if (b instanceof Book) {
-                System.out.println("Book is Added Successfully..");
-            }
 
-            else if (l instanceof Laptop) {
-                System.out.println("Laptop is Added Successfully..");
-            }
         } else {
-            System.out.println("Already Existed Sorry.");
+            if (l instanceof Laptop) {
+                System.out.println("Laptop is Present in Bag");
+            }
+            if (b instanceof Book) {
+                System.out.println("Book is Present in Bag");
+            }
         }
 
     }
@@ -52,9 +53,14 @@ class Bag {
         if (b == null && l == null) {
             System.out.println("Add Something First");
         } else {
-            b = null;
-            l = null;
-            System.out.println("Removed Successfully.");
+            if (l instanceof Laptop) {
+                l = null;
+                System.out.println("Laptop Removed Successfully...");
+            }
+            if (b instanceof Book) {
+                b = null;
+                System.out.println("Book Removed Successfully...");
+            }
         }
 
     }
